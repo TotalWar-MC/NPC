@@ -1,0 +1,22 @@
+name: Cargo
+main: com.steffbeard.totalwar.npc.NPCMain
+version: ${project.version}
+depend: [Movecraft, Vault, Citizens, dtlTraders]
+
+commands:
+    load:
+        description: loads cargo
+        permission: Cargo.load
+    unload:
+        description: unloads cargo
+        permission: Cargo.unload
+    cargo:
+        description: get information about the plugin
+        permission: Cargo.cargo
+permissions:
+    Cargo.load:
+        description: Allows users to load cargo
+    Cargo.unload:
+        description: Allows users unload cargo
+    Cargo.cargo:
+        description: Allows users to use /cargo
