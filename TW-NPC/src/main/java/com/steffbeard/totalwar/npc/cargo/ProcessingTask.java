@@ -1,6 +1,5 @@
 package com.steffbeard.totalwar.npc.cargo;
 
-import nl.thewgbbroz.dtltraders.guis.tradegui.items.TradableGUIItem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -11,26 +10,22 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
 import com.steffbeard.totalwar.npc.Config;
-import com.steffbeard.totalwar.npc.NPCMain;
 
-/**
- * Write a description of class ProcessingTask here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import nl.thewgbbroz.dtltraders.guis.tradegui.items.TradableGUIItem;
+
 public class ProcessingTask extends BukkitRunnable implements Listener {
 	
 	public Config config;
 	
     private static final int DELAY_BETWEEN_DISPLAY = 1;
-    private int remainingTime,remainingChests;
+    private int remainingTime, remainingChests;
     private final Player player;
     private final TradableGUIItem item;
     private final String itemDisplayName;
     private Scoreboard board;
     private Objective objective;
-    public ProcessingTask(Player player, TradableGUIItem item, int remainingChests){//, int remainingChests){
+    
+    public ProcessingTask(Player player, TradableGUIItem item, int remainingChests) { //, int remainingChests){
         if (item == null) 
             throw new IllegalArgumentException("item must not be null");
         if (player == null) 
@@ -49,8 +44,8 @@ public class ProcessingTask extends BukkitRunnable implements Listener {
     @Override
     public void run() {
         if(remainingTime > DELAY_BETWEEN_DISPLAY)
-            remainingTime-=DELAY_BETWEEN_DISPLAY;
-        else{
+            remainingTime -= DELAY_BETWEEN_DISPLAY;
+        else {
             this.cancel();
             player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
             return;

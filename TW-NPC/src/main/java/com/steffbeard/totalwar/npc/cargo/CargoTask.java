@@ -1,10 +1,5 @@
 package com.steffbeard.totalwar.npc.cargo;
 
-import java.util.Arrays;
-import java.util.Collections;
-
-import net.countercraft.movecraft.utils.HashHitBox;
-import nl.thewgbbroz.dtltraders.guis.tradegui.items.TradableGUIItem;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -13,6 +8,8 @@ import com.steffbeard.totalwar.npc.NPCMain;
 
 import net.countercraft.movecraft.craft.Craft;
 import net.countercraft.movecraft.craft.CraftManager;
+import net.countercraft.movecraft.utils.HashHitBox;
+import nl.thewgbbroz.dtltraders.guis.tradegui.items.TradableGUIItem;
 
 public abstract class CargoTask extends BukkitRunnable {
 	
